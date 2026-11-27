@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY TASK MANAGER</title>
+</head>
+
+<body>
+
+    <h1>My Task Manager</h1>
+
+    <input type="text" placeholder="Enter Your Task" id="inputTask">
+
+    <button id="btnTask">Update Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+
+        let inputTask = document.getElementById("inputTask");
+        let btnTask = document.getElementById("btnTask");
+        let taskList = document.getElementById("taskList");
+
+        function addTask() {
+
+            let task = inputTask.value.trim();
+
+            if (task === "") {
+                alert("Please enter the task");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            li.textContent = task;
+
+            taskList.appendChild(li);
+
+            inputTask.value = "";
+        }
+
+        btnTask.addEventListener("click", addTask);
+
+        inputTask.addEventListener("keydown", function (e) {
+
+            if (e.key === "Enter") {
+                addTask();
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
