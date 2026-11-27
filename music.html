@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roddy Theme</title>
+    <link rel="stylesheet" href="./music.css">
+    <link rel="icon" href="./roddyIcon.png">
+</head>
+
+<body>
+
+    <img id="BGM" src="./roddy1.png" alt="">
+    <audio id="audioRoddy" src="./Roddy Theme BGM.mp3" controls></audio>
+    <button class="musicBtn" onclick="change()">Change the Bg</button>
+
+    <script>
+        function change() {
+            let bg = document.getElementById("BGM");
+
+            if (bg.src.includes("roddy1.png")) {
+                bg.src = "./RAJINIeNTRY.png";
+            } else {
+                bg.src = "./roddy1.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
